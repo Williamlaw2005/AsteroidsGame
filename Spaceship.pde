@@ -16,7 +16,7 @@ class Spaceship extends Floater
     }
     public void thruster() {
     noStroke();
-    fill(0, 255, 255);
+    fill(255,0,0);
     translate((float)myCenterX, (float)myCenterY);
     float dRadians = (float)(myPointDirection*(Math.PI / 180));
     rotate(dRadians + (float)Math.PI / 2.5);
