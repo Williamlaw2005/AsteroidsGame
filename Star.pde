@@ -3,11 +3,11 @@ class Star
   private int myX, myY;
   public Star()
   {
-   myX = (int)(Math.random()*displayWidth);
-   myY = (int)(Math.random()*displayHeight);
+   myX = (int)(Math.random()*1000);
+   myY = (int)(Math.random()*1000);
   }
   public void move(){
-    if(myX == displayWidth)
+    if(myX == 1000)
       myX = 0;
     else
       myX++;
