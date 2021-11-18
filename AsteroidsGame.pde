@@ -11,6 +11,7 @@ public void setup()
 }
 public void draw() 
 {
+  noStroke();
   background(0);
   for(int i = 0; i < sky.length;i++)
   {
