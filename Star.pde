@@ -1,15 +1,15 @@
-class Star //note that this class does NOT extend Floater
+class Star 
 {
   private int myX, myY;
   public Star()
   {
-   myX = (int)(Math.random()*500);
-   myY = (int)(Math.random()*500);
+   myX = (int)(Math.random()*displayWidth);
+   myY = (int)(Math.random()*displayHeight);
   }
   public void move(){
-    if(myX == 300)
+    if(myX == displayWidth)
       myX = 0;
-    else 
+    else
       myX++;
   }
   public void show()
