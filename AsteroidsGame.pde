@@ -3,7 +3,7 @@ Star[] sky = new Star[200];
 boolean apressed, spressed, dpressed, wpressed, thrusteron = false;
 public void setup()
   {
-  fullScreen();
+  size(1000,1000);
   Spaceship1 = new Spaceship();
   for(int i = 0; i < sky.length; i++){
     sky[i] = new Star();
