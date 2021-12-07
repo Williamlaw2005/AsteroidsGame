@@ -1,20 +1,15 @@
 class Asteroids extends Floater{
-  private double rotSpeed;
+  private double rotSpeed, vertexRadius;
   public Asteroids(){
     rotSpeed = 2;
-    corners = 5;
-    xCorners = new int[corners];
-    yCorners = new int[corners];
-    xCorners[0] = 0*3; 
-    yCorners[0] = 8*3;
-    xCorners[1] = 4*3;
-    yCorners[1] = 6*3;
-    xCorners[2] = 6*3;
-    yCorners[2] = 2*3;
-    xCorners[3] = 2*3;
-    yCorners[3] = -2*3;
-    xCorners[4] = -4*3;
-    yCorners[4] = 0*3;
+    corners = (int)(Math.random()*7)+6;
+    xCorners = new double[corners];
+    yCorners = new double[corners];
+    for(int i = 0; i < corners;i++){
+     vertexRadius = (Math.random()*20)+10;
+     yCorners[i] = vertexRadius*Math.sin(i*(2*PI/corners));
+     xCorners[i] = vertexRadius*Math.cos(i*(2*PI/corners));
+    }
     
     myCenterX = (double)(Math.random()*1000);
     myCenterY = (double)(Math.random()*1000);
@@ -23,6 +18,12 @@ class Asteroids extends Floater{
     myPointDirection = (double)(Math.random()*360);
     fillColor = 0;
     strokeColor = 255;
+  }
+  public void setX(double x){
+    myCenterX = x;
+  }
+  public void setY(double y){
+    myCenterY = y;
   }
   public double getX(){
     return myCenterX;
