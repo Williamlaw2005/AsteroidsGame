@@ -6,7 +6,14 @@ class Spaceship extends Floater
       yCorners = new int[]{-8,0,8,0};
       myCenterX = 1000/2;
       myCenterY = 1000/2;
-      myColor = 255;
+      fillColor = 0;
+      strokeColor = 255;
+    }
+    public double getX(){
+      return myCenterX;
+    }
+    public double getY(){
+      return myCenterY;
     }
     public void hyperSpace(){
      myXspeed = 0;
