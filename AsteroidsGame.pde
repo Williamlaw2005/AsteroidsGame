@@ -1,12 +1,18 @@
 Spaceship Spaceship1;
-Star[] sky = new Star[200];
-boolean apressed, spressed, dpressed, wpressed, thrusteron = false;
+Star[] sky = new Star[5000];
+ArrayList <Asteroids> Asteroidlist = new ArrayList <Asteroids>();
+boolean apressed, spressed, dpressed, wpressed, thrusteron, collisionDetected = false;
+int lives = 3;
+int AsteroidNumber = 30;
 public void setup()
   {
   size(1000,1000);
   Spaceship1 = new Spaceship();
   for(int i = 0; i < sky.length; i++){
     sky[i] = new Star();
+  }
+  for(int i = 0; i < AsteroidNumber;i++){
+    Asteroidlist.add(new Asteroids());
   }
 }
 public void draw() 
@@ -16,9 +22,15 @@ public void draw()
   for(int i = 0; i < sky.length;i++)
   {
     sky[i].show();
-    sky[i].move();
-  }
   
+  }
+  for(int i = 0; i < Asteroidlist.size();i++){
+    Asteroidlist.get(i).show();
+    Asteroidlist.get(i).move();
+    float d = dist((float)Spaceship1.getX(), (float)Spaceship1.getY(), (float)Asteroidlist.get(i).getX(), (float)Asteroidlist.get(i).getY());
+    if(d < 25)
+      Asteroidlist.remove(i);
+  }
   Spaceship1.show();
   if(apressed == true){
     Spaceship1.turn(-5);
