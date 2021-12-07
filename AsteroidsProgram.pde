@@ -1,6 +1,6 @@
-class Asteriod extends Floater{
+class Asteroids extends Floater{
   private double rotSpeed;
-  public Asteriod(){
+  public Asteroids(){
     rotSpeed = 2;
     corners = 5;
     xCorners = new int[corners];
@@ -16,10 +16,19 @@ class Asteriod extends Floater{
     xCorners[4] = -4*3;
     yCorners[4] = 0*3;
     
-    myCenterX = (int)(Math.random()*800);
-    myCenterY = (int)(Math.random()*800);
-    myXspeed = 1;
-    myColor = 255;
+    myCenterX = (double)(Math.random()*1000);
+    myCenterY = (double)(Math.random()*1000);
+    myXspeed = (double)(Math.random()*0.5);
+    myYspeed = (double)(Math.random()*0.5);
+    myPointDirection = (double)(Math.random()*360);
+    fillColor = 0;
+    strokeColor = 255;
+  }
+  public double getX(){
+    return myCenterX;
+  }
+  public double getY(){
+    return myCenterY;
   }
   public void move(){
     turn(rotSpeed);
