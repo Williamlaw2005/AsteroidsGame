@@ -29,8 +29,8 @@ public void draw()
     Asteroidlist.get(i).move();
     float d = dist((float)Spaceship1.getX(), (float)Spaceship1.getY(), (float)Asteroidlist.get(i).getX(), (float)Asteroidlist.get(i).getY());
     if(d < 25){
-      Asteroidlist.get(i).setX((double)(Math.random()*1000)); 
-      Asteroidlist.get(i).setY((double)(Math.random()*1000)); 
+      Asteroidlist.remove(i);
+      Asteroidlist.add(i,new Asteroids());
     }
   }
   Spaceship1.show();
