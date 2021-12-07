@@ -28,8 +28,10 @@ public void draw()
     Asteroidlist.get(i).show();
     Asteroidlist.get(i).move();
     float d = dist((float)Spaceship1.getX(), (float)Spaceship1.getY(), (float)Asteroidlist.get(i).getX(), (float)Asteroidlist.get(i).getY());
-    if(d < 25)
-      Asteroidlist.remove(i);
+    if(d < 25){
+      Asteroidlist.get(i).setX((double)(Math.random()*1000)); 
+      Asteroidlist.get(i).setY((double)(Math.random()*1000)); 
+    }
   }
   Spaceship1.show();
   if(apressed == true){
